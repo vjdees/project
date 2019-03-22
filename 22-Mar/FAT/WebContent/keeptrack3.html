@@ -1,0 +1,117 @@
+<div class="container">
+	<h2>KeepTrack3</h2>
+	<strong> ADD EMPLOYEE</strong>
+		<br/>
+		<table id="t01">
+		<tr>		
+		<th>Resourse Name</th>
+		<th>SOW</th>
+		<!-- <th>WorkDayId</th> -->
+		<th>Comments</th>
+		<th>Startdate</th>
+		<th>Enddate</th>
+		<th>Rateset</th>
+		<th>Sap Id</th>
+		<th>Employee ID</th>
+		<th>Rate</th>
+		<th>Location</th>
+		<th>Desig</th>
+		<th>Cat</th>
+		<th>Amount</th>
+		<th>Workingdays</th>
+		<th>Leaves</th>
+		<th>leave dates</th>
+		<th>w1</th>
+		<th>w2</th>
+		<th>w3</th>
+		<th>w4</th>
+		<th>w5</th>
+		<th>Flag</th>
+		</tr>
+		<tr>
+		<td><input type="text" data-ng-model="newEmployee.resource_name"/></td>
+		<td><input type="text" data-ng-model="newEmployee.sow"/></td>
+		<!-- <td><input type="text" data-ng-model="newEmployee.workdayid" /></td> -->
+		<td><input type="text" data-ng-model="newEmployee.comments" /></td>
+		<td><input type="text" data-ng-model="newEmployee.start_date" /></td>
+		<td><input type="text" data-ng-model="newEmployee.end_date" /></td>
+		<td><input type="text" data-ng-model="newEmployee.rate_set" /></td>
+		<td><input type="text" data-ng-model="newEmployee.sap_id" /></td>
+		<td><input type="text" data-ng-model="newEmployee.employee_id" /></td>
+		<td><input type="text" data-ng-model="newEmployee.rate" /></td>
+		<td><input type="text" data-ng-model="newEmployee.location" /></td>
+		<td><input type="text" data-ng-model="newEmployee.desig" /></td>
+		<td><input type="text" data-ng-model="newEmployee.cat" /></td>
+		<td><input type="text" data-ng-model="newEmployee.amount" /></td>
+		<td><input type="text" data-ng-model="newEmployee.workingdays" /></td>
+		<td><input type="text" data-ng-model="newEmployee.leaves" /></td>
+		<td><input type="text" data-ng-model="newEmployee.leave_dates" /></td>
+		<td><input type="text" data-ng-model="newEmployee.w1" /></td>
+		<td><input type="text" data-ng-model="newEmployee.w2" /></td>
+		<td><input type="text" data-ng-model="newEmployee.w3" /></td>
+		<td><input type="text" data-ng-model="newEmployee.w4"/></td>
+		<td><input type="text" data-ng-model="newEmployee.w5"/></td>
+		<td><input type="text" data-ng-model="newEmployee.flag"/></td>
+		</tr>
+		</table>
+		<br />
+		<button data-ng-click="save()">Save</button>
+		<br />
+ 	<input class="form-control mr-sm-2" type="text" placeholder="Search" data-ng-model="filter.workdayid"  />
+	<br/>
+	<table>
+		<tr>
+		<th>S.no</th>
+		<th>Project-Id-Name</th>
+		<th>sow</th>
+		<th>WorkDayId</th>
+		<th>comments</th>
+		<th>Comments</th>
+		<th>Sow</th>
+		<th>Location</th>
+		<th>Stream</th>
+		<th>project</th>
+		<th>Cat</th>
+		<th>Week1</th>
+		<th>Week2</th>
+		<th>Week3</th>
+		<th>Week4</th>
+		<th>Week5</th>
+		<th>Leaves</th>
+		<th>Workingdays</th>
+		<th>pdtosp</th>
+		<th>agreedsp</th>
+		<th>allocated sp</th>
+		<th>actual sp</th>
+		<th>Revenue</th> 
+		
+		
+		</tr>
+		<tr data-ng-repeat="emp in employees | filter:filter.name">
+		<td>{{$index+1}}</td>
+		<td>{{emp.name}}</td>
+		<td>{{emp.sow}}</td>
+		<td>{{emp.WorkDayId}}</td>
+		<td>{{emp.comments}}</td>
+		<td>{{emp.comments}}</td>
+		<td>{{emp.sow}}</td>
+		<td>{{emp.location}}</td>
+		<td>{{emp.stream}}</td>
+		<td>{{emp.project}}</td>
+		<td>{{emp.cat}}</td>
+		<td>{{emp.week1}}</td>
+		<td>{{emp.week2}}</td>
+		<td>{{emp.week3}}</td>
+		<td>{{emp.week4}}</td>
+		<td>{{emp.week5}}</td>
+		<td>{{emp.leaves}}</td>
+		<td>{{emp.workingdays}}</td>
+		<td>{{emp.pdtosp}}</td>
+		<td>{{emp.agreedsp}}</td>
+		<td>{{emp.allocatedsp}}</td>
+		<td>{{emp.actualsp}}</td>
+		<td>{{emp.revenue}}</td>
+		<td><button data-ng-click="removeEmployee(emp)">X</button></td>
+	</table>
+	
+</div>	
