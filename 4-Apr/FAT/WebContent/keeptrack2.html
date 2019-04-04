@@ -1,0 +1,174 @@
+<div class="container-fluid">
+<div class="row">
+
+<div class="col-md-12">
+	<h2>KEEP TRACK2</h2>
+	<br/>
+		<strong> ADD EMPLOYEE:</strong>
+		<br/>
+<div class="table-responsive-md">
+<table id="add-table" class="table">
+		<tr>		
+		<th>Project-ID-Name</th>
+		<th>ID</th><th>WorkDayId</th>
+		<th>Team Member</th>
+		<th>Comments</th>
+		<th>SOW</th>
+		<th>Location</th>
+		<th>Stream</th>
+		<th>project</th>
+		<th>Cat</th>
+		<th>Week1</th>
+		<th>Week2</th>
+		<th>Week3</th>
+		<th>Week4</th>
+		<th>Week5</th>
+		<th>Leaves</th>
+		<th>Working Days</th>
+		<th>PD to SP</th>
+		<th>Agreed SP</th>
+		<th>Allocated SP</th>
+		<th>Actual SP</th>
+		</tr>
+		<tr>
+		<td><!-- <input type="text" data-ng-model="newEmployee.name"/> -->
+		<textarea class="form-control" data-ng-model="newEmployee.name"></textarea>
+		</td>
+		<td><input type="text" data-ng-model="newEmployee.ID"/></td>
+		<td><input type="text" data-ng-model="newEmployee.workdayid" /></td>
+		<td><input type="text" data-ng-model="newEmployee.teammember" /></td>
+		<td><input type="text" data-ng-model="newEmployee.comments" /></td>
+		<td><input type="text" data-ng-model="newEmployee.sow" /></td>
+		<td><input type="text" data-ng-model="newEmployee.location" /></td>
+		<td><input type="text" data-ng-model="newEmployee.stream" /></td>
+		<td><input type="text" data-ng-model="newEmployee.project" /></td>
+		<td><input type="text" data-ng-model="newEmployee.cat" /></td>
+		<td><input type="text" data-ng-model="newEmployee.week1" /></td>
+		<td><input type="text" data-ng-model="newEmployee.week2" /></td>
+		<td><input type="text" data-ng-model="newEmployee.week3" /></td>
+		<td><input type="text" data-ng-model="newEmployee.week4" /></td>
+		<td><input type="text" data-ng-model="newEmployee.week5" /></td>
+		<td><input type="text" data-ng-model="newEmployee.leaves" /></td>
+		<td><input type="text" data-ng-model="newEmployee.workingdays" /></td>
+		<td><input type="text" data-ng-model="newEmployee.pdtosp" /></td>
+		<td><input type="text" data-ng-model="newEmployee.agreedsp" /></td>
+		<td><input type="text" data-ng-model="newEmployee.allocatedsp" /></td>
+		<td><input type="text" data-ng-model="newEmployee.actualsp"/></td>
+		</tr>
+		</table>
+</div>
+<div>
+	<button data-ng-click="save()" class="btn btn-success">Save <span class="glyphicon glyphicon-asterisk"></span></button>
+</div>
+<br/>
+<div class="col-md-2">
+	<input class="form-control mr-sm-2" type="text" placeholder="Search" data-ng-model="input" />
+</div>
+<br/>
+<br/>
+<div class="col-md-12">
+<table>
+		<tr>
+		<th>S.No.</th>
+		<th>Project-ID-Name</th>
+		<th>Id</th><th>Workday ID</th>
+		<th>Team Member</th>
+		<th>Comments</th>
+		<th>SOW</th>
+		<th>Location</th>
+		<th>Stream</th>
+		<th>Project</th>
+		<th>Cat</th>
+		<th>Week1</th>
+		<th>Week2</th>
+		<th>Week3</th>
+		<th>Week4</th>
+		<th>Week5</th>
+		<th>Leaves</th>
+		<th>Working Days</th>
+		<th>PD to SP</th>
+		<th>Agreed SP</th>
+		<th>Allocated SP</th>
+		<th>Actual SP</th>
+		<th>Revenue</th>
+		<th>Action</th>
+		
+		
+		</tr>
+		<tr data-ng-repeat="emp in employees | filter:input | orderBy:'workdayid'">
+		<td>{{$index+1}}</td>
+		<td>
+            <span data-ng-hide="editMode">{{emp.name}}</span>
+            <input type="text" data-ng-show="editMode" data-ng-model="emp.name" data-ng-required />
+        </td>
+        
+		<td>
+			<span data-ng-hide="editMode">{{emp.ID}}</span>
+            <input type="text" data-ng-show="editMode" data-ng-model="emp.ID" data-ng-required /></td>
+            
+		<td><span data-ng-hide="editMode">{{emp.workdayid}}</span>
+		<input type="text" data-ng-show="editMode" data-ng-model="emp.workdayid" data-ng-required /></td>
+		
+		<td><span data-ng-hide="editMode">{{emp.teammember}}</span>
+		<input type="text" data-ng-show="editMode" data-ng-model="emp.teammember" data-ng-required /></td>
+		
+		<td><span data-ng-hide="editMode">{{emp.comments}}</span>
+		<input type="text" data-ng-show="editMode" data-ng-model="emp.comments" data-ng-required /></td>
+		
+		<td><span data-ng-hide="editMode">{{emp.sow}}</span>
+		<input type="text" data-ng-show="editMode" data-ng-model="emp.sow" data-ng-required /></td>
+		
+		<td><span data-ng-hide="editMode">{{emp.location}}</span>
+		<input type="text" data-ng-show="editMode" data-ng-model="emp.location" data-ng-required /></td>
+		
+		<td><span data-ng-hide="editMode">{{emp.stream}}</span>
+		<input type="text" data-ng-show="editMode" data-ng-model="emp.stream" data-ng-required /></td>
+		
+		<td><span data-ng-hide="editMode">{{emp.project}}</span>
+		<input type="text" data-ng-show="editMode" data-ng-model="emp.project" data-ng-required /></td>
+		
+		<td><span data-ng-hide="editMode">{{emp.cat}}</span>
+		<input type="text" data-ng-show="editMode" data-ng-model="emp.cat" data-ng-required /></td>
+	
+		<td><span data-ng-hide="editMode">{{emp.week1}}</span>
+		<input type="text" data-ng-show="editMode" data-ng-model="emp.week1" data-ng-required /></td>
+		
+		<td><span data-ng-hide="editMode">{{emp.week2}}</span>
+		<input type="text" data-ng-show="editMode" data-ng-model="emp.week2" data-ng-required /></td>
+		
+		<td><span data-ng-hide="editMode">{{emp.week3}}</span>
+		<input type="text" data-ng-show="editMode" data-ng-model="emp.week3" data-ng-required /></td>
+		
+		<td><span data-ng-hide="editMode">{{emp.week4}}</span>
+		<input type="text" data-ng-show="editMode" data-ng-model="emp.week4" data-ng-required /></td>
+		
+		<td><span data-ng-hide="editMode">{{emp.week5}}</span>
+		<input type="text" data-ng-show="editMode" data-ng-model="emp.week5" data-ng-required /></td>
+			
+		
+		<td><span data-ng-hide="editMode">{{emp.leaves}}</span>
+		<input type="text" data-ng-show="editMode" data-ng-model="emp.leaves" data-ng-required /></td>
+		
+		<td><span data-ng-hide="editMode">{{emp.workingdays}}</span>
+		<input type="text" data-ng-show="editMode" data-ng-model="emp.workingdays" data-ng-required /></td>
+		
+		<td>{{emp.pdtosp}}</td>
+		<td>{{emp.agreedsp}}</td>
+		<td>{{emp.allocatedsp}}</td>
+		<td>{{emp.actualsp}}</td>
+		<td>{{emp.revenue}}</td>
+		<td>
+			<button type="submit" data-ng-hide="editMode" data-ng-click="editMode = true; edit(emp)" class="btn btn-info">Edit</button>
+            <button type="submit" data-ng-show="editMode" data-ng-click="editMode = false" class="btn btn-default">Save</button>
+            <button type="submit" data-ng-show="editMode" data-ng-click="editMode = false; cancel()" class="btn btn-default">Cancel</button>
+			<button type="button" data-ng-click="removeEmployee(emp)" class="btn btn-danger">X</button>
+		</table>
+</div>
+
+</div>
+</div>
+</div>
+
+	
+	
+</div>	

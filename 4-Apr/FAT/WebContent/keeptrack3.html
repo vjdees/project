@@ -1,0 +1,140 @@
+<div class="container-fluid">
+<div class="row">
+
+<div class="col-md-12">
+	<h2>KeepTrack3</h2>
+	<strong> ADD EMPLOYEE</strong>
+		<br/>
+	<div class="table-responsive-md">
+	<table id="add-table" class="table">	
+		<tr>		
+		<th>Resource Name</th>
+		<th>SOW</th>
+		<th>Comments</th>
+		<th>Start Date</th>
+		<th>End Date</th>
+		<th>Rate Set</th>
+		<th>SAP ID</th>
+		<th>Employee ID</th>
+		<th>Rate</th>
+		<th>Location</th>
+		<th>Desig</th>
+		<th>Cat</th>
+		<th>Amount</th>
+		<th>Working Days</th>
+		<th>Leaves</th>
+		<th>leave dates</th>
+		<th>w1</th>
+		<th>w2</th>
+		<th>w3</th>
+		<th>w4</th>
+		<th>w5</th>
+		<th>Flag</th>
+		<th>Total Working Days</th>
+		</tr>
+		<tr>
+		<td><input type="text" data-ng-model="newEmployee.resource_name"/></td>
+		<td><input type="text" data-ng-model="newEmployee.sow"/></td>
+		<!-- <td><input type="text" data-ng-model="newEmployee.workdayid" /></td> -->
+		<td><input type="text" data-ng-model="newEmployee.comments" /></td>
+		<td><input type="text" data-ng-model="newEmployee.start_date" /></td>
+		<td><input type="text" data-ng-model="newEmployee.end_date" /></td>
+		<td><input type="text" data-ng-model="newEmployee.rate_set" /></td>
+		<td><input type="text" data-ng-model="newEmployee.sap_id" /></td>
+		<td><input type="text" data-ng-model="newEmployee.employee_id" /></td>
+		<td><input type="text" data-ng-model="newEmployee.rate" /></td>
+		<td><input type="text" data-ng-model="newEmployee.location" /></td>
+		<td><input type="text" data-ng-model="newEmployee.desig" /></td>
+		<td><input type="text" data-ng-model="newEmployee.cat" /></td>
+		<td><input type="text" data-ng-model="newEmployee.amount" /></td>
+		<td><input type="text" data-ng-model="newEmployee.workingdays" /></td>
+		<td><input type="text" data-ng-model="newEmployee.leaves" /></td>
+		<td><input type="text" data-ng-model="newEmployee.leave_dates" /></td>
+		<td><input type="text" data-ng-model="newEmployee.w1" /></td>
+		<td><input type="text" data-ng-model="newEmployee.w2" /></td>
+		<td><input type="text" data-ng-model="newEmployee.w3" /></td>
+		<td><input type="text" data-ng-model="newEmployee.w4"/></td>
+		<td><input type="text" data-ng-model="newEmployee.w5"/></td>
+		<td><input type="text" data-ng-model="newEmployee.flag"/></td>
+		<td><input type="text" data-ng-model="newEmployee.totalworkingdays"/><td>
+		</tr>
+		</table>
+		</div>
+		<br />
+		<div>
+		<button data-ng-click="save()" class="btn btn-success">Save <span class="glyphicon glyphicon-asterisk"></span></button>
+		</div>
+		<br />
+		<div class="col-md-2">
+ 			<input class="form-control mr-sm-2" type="text" placeholder="Search" data-ng-model="filter.workdayid"  />
+ 		</div>
+	<br/>
+	<br/>
+	<div class="col-md-12">
+	<table>
+		<tr>
+		<th>S. No.</th>
+		<th>Resource Name</th>
+		<th>SOW</th>
+		<th>comments</th>
+		<th>Start Date</th>
+		<th>End Date</th>
+		<th>RateSet</th>
+		<th>SAP ID</th>
+		<th>Employee ID</th>
+		<th>Rate</th>
+		<th>Location</th>
+		<th>Desig</th>
+		<th>Cat</th>
+		<th>Amount</th>
+		<th>Working Days</th>
+		<th>Leaves</th>
+		<th>Leave Dates</th>
+		<th>W1</th>
+		<th>W2</th>
+		<th>W3</th>
+		<th>W4</th>
+		<th>W5</th>
+		<th>Flag</th>
+		<th>Action</th>
+		
+		
+		</tr>
+		<tr data-ng-repeat="emp in kt3employees | filter:filter.name">
+		<td>{{$index+1}}</td>
+		<td>{{emp.resource_name}}</td>
+		<td>{{emp.sow}}</td>
+		<td>{{emp.comments}}</td>
+		<td>{{emp.start_date}}</td>
+		<td>{{emp.end_date}}</td>
+		<td>{{emp.rate_set}}</td>
+		<td>{{emp.sap_id}}</td>
+		<td>{{emp.employee_id}}</td>
+		<td>{{emp.rate}}</td>
+		<td>{{emp.location}}</td>
+		<td>{{emp.desig}}</td>
+		<td>{{emp.cat}}</td>
+		<td>{{emp.amount}}</td>
+		<td>{{emp.workingdays}}</td>
+		<td>{{emp.leaves}}</td>
+		<td>{{emp.leave_dates}}</td>
+		<td>{{emp.w1}}</td>
+		<td>{{emp.w2}}</td>
+		<td>{{emp.w3}}</td>
+		<td>{{emp.w4}}</td>
+		<td>{{emp.w5}}</td>
+		<td>{{emp.flag}}</td>
+		<td>
+		<button type="submit" data-ng-hide="editMode" data-ng-click="editMode = true; edit(emp)" class="btn btn-info">Edit</button>
+            <button type="submit" data-ng-show="editMode" data-ng-click="editMode = false" class="btn btn-default">Save</button>
+            <button type="submit" data-ng-show="editMode" data-ng-click="editMode = false; cancel()" class="btn btn-default">Cancel</button>
+		<button type="button" data-ng-click="removeEmployee(emp)" class="btn btn-danger">X</button>
+		</td>
+	</table>
+	</div>
+	
+	</div>
+	</div>
+	</div>
+	
+</div>	

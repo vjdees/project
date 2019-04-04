@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://java.sun.com/xml/ns/javaee" xmlns:web="http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd" xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd" id="WebApp_ID" version="3.0">
+  <display-name>FAT</display-name>
+  <filter>
+    <filter-name>CorsFilter</filter-name>
+    <filter-class>org.apache.catalina.filters.CorsFilter</filter-class>
+    <init-param>
+      <param-name>cors.allowed.origins</param-name>
+      <param-value>*</param-value>
+    </init-param>
+  </filter>
+  <filter-mapping>
+    <filter-name>CorsFilter</filter-name>
+    <url-pattern>/*</url-pattern>
+  </filter-mapping>
+  <servlet>
+    <servlet-name>KeepTrack2</servlet-name>
+    <servlet-class>keeptrack2.Keeptrack2Servlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>KeepTrack2</servlet-name>
+    <url-pattern>/keeptrack2</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <servlet-name>KeepTrack3</servlet-name>
+    <servlet-class>keeptrack3.Keeptrack3Servlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>KeepTrack3</servlet-name>
+    <url-pattern>/keeptrack3</url-pattern>
+  </servlet-mapping>
+  <welcome-file-list>
+    <welcome-file>index.html</welcome-file>
+    <welcome-file>index.htm</welcome-file>
+    <welcome-file>index.jsp</welcome-file>
+    <welcome-file>default.html</welcome-file>
+    <welcome-file>default.htm</welcome-file>
+    <welcome-file>default.jsp</welcome-file>
+  </welcome-file-list>
+</web-app>
